@@ -1,0 +1,44 @@
+
+# Actividad 1
+
+numero1 = int(input("Ingrese un número: "))
+numero2 = int(input("Ingrese el segundo número: "))
+
+print(f"El primer número: {numero1} es más grande" if numero1 > numero2 else f"El segundo número: {numero2} es más grande")
+
+
+# Actividad 2
+
+def controlStock (local, *productos):
+    print(f"Sucusal: {local}")
+    for prod in productos:
+        print (f"{prod}")
+    return productos
+
+productosTiendaCAseros = controlStock("Caseros", "teclado", "mouse", "auriculares")
+
+busqueda = input("Ingrese el producto que sea buscar: ")
+
+estadoStock = "esta disponible" if busqueda in productosTiendaCAseros else "no esta disponible."
+
+print(f"El producto '{busqueda}' {estadoStock}")
+
+
+# Actividad 3
+
+num1 = int(input("Ingresa un número para verificar si es par: "))
+num2 = 2
+
+print(f"El número {num1} es par" if num1 % num2 == 0 else f"El número {num1} es impar")
+
+# Actividad 4 y 5
+
+def calcularPromedio(*num):
+    promedio = sum(num) / len(num) if len(num) > 0 else 0
+
+    print(f"El promedio es: {promedio:.2f}" if len(num) > 0 else "Error: No se ingresaron números para promediar")
+    return promedio
+
+calcularPromedio(3,4,6)
+calcularPromedio(3,4)
+calcularPromedio()
